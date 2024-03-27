@@ -1,0 +1,3 @@
+org.tecklens.splkeycloak.providers.keycloak.phone.authentication.forms.RegistrationPhoneVerificationCode
+org.tecklens.splkeycloak.providers.keycloak.phone.authentication.forms.RegistrationRedirectParametersReader
+org.tecklens.splkeycloak.providers.keycloak.phone.authentication.forms.RegistrationPhoneUserCreation

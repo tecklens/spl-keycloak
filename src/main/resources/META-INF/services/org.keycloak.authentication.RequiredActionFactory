@@ -1,0 +1,2 @@
+org.tecklens.splkeycloak.providers.keycloak.phone.authentication.requiredactions.UpdatePhoneNumberRequiredActionFactory
+org.tecklens.splkeycloak.providers.keycloak.phone.authentication.requiredactions.ConfigSmsOtpRequiredActionFactory

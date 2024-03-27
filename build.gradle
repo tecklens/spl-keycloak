@@ -1,0 +1,59 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.4'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'org.tecklens'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '21'
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//	implementation 'org.springframework.boot:spring-boot-starter-oauth2-authorization-server'
+//	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+//	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-configuration-processor'
+	implementation 'org.springframework:spring-context-support'
+	implementation 'com.googlecode.libphonenumber:libphonenumber:8.13.33'
+	implementation 'org.jboss.resteasy:resteasy-jackson2-provider:6.2.3.Final'
+	implementation 'org.keycloak:keycloak-dependencies-server-all:24.0.2'
+	implementation 'org.keycloak:keycloak-crypto-default:24.0.2'
+	implementation 'org.keycloak:keycloak-admin-ui:24.0.2'
+	implementation 'org.keycloak:keycloak-services:24.0.2'
+	implementation 'org.keycloak:keycloak-rest-admin-ui-ext:24.0.2'
+	implementation 'org.liquibase:liquibase-core:4.26.0'
+	implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.12.0'
+	implementation group: 'org.jboss.resteasy', name: 'resteasy-jaxrs-all', version: '6.2.8.Final'
+	implementation group: 'org.jboss.resteasy', name: 'resteasy-core', version: '6.2.8.Final'
+	implementation group: 'io.smallrye', name: 'jandex', version: '3.1.7'
+	implementation group: 'commons-io', name: 'commons-io', version: '2.15.1'
+
+	testImplementation 'io.rest-assured:rest-assured:4.26.0'
+	compileOnly 'org.projectlombok:lombok'
+//	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'org.postgresql:postgresql'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

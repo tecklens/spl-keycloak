@@ -1,0 +1,81 @@
+server:
+  port: 8083
+
+spring:
+  jpa:
+    defer-datasource-initialization: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database: postgresql
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        generate_statistics: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/keycloak
+    username: postgres
+    password: spl@2024
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 10
+      idle-timeout: 30000
+      max-lifetime: 2000000
+      connection-timeout: 30000
+      pool-name: HikariPoolBooks
+      connection-test-query: SELECT 1
+      keepalive-time: 30000
+  freemarker:
+    cache: false
+    template-loader-path: file:src/main/resources/theme/
+  sql:
+    init:
+      mode: always
+      platform: postgres
+logging:
+  level:
+    org.jgroups: INFO
+    org.infinispan: INFO
+    org.keycloak: INFO
+    org.keycloak.services.managers.DefaultBruteForceProtector: DEBUG
+    org.keycloak.services.scheduled.ClusterAwareScheduledTaskRunner: DEBUG
+    org.keycloak.services.managers.UserSessionManager: DEBUG
+    org.keycloak.timer.basic: DEBUG
+keycloak:
+  server:
+    contextPath: /auth
+    adminUser:
+      username: spl-admin
+      password: spl@2024#
+    realmImportFile: spl-realm.json
+
+phone:
+  service: viettel
+
+auth:
+  providers:
+    master:
+
+sms:
+  api:
+    namespace: impl
+    endpoint: http://10.60.106.216:8009/bulkapi?wsdl
+    namespaceURI: http://impl.bulkSms.ws/
+    configBody:
+      user: smsbrand_vcc
+      password: VCC@2021
+      cpCode: VCC
+      requestId: 1
+      commandCode: bulksms
+      contentType: 0
+      serviceId:
+        viettel: VIETTEL_CTR
+        notViettel: AIO
+
+  minValuesRandomOtp: 100000
+  maxValuesRandomOtp: 999999
+
+#sso:
+#  url: https://10.255.58.201:8002/sso/v1/tickets

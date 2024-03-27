@@ -1,0 +1,3 @@
+org.tecklens.splkeycloak.providers.keycloak.phone.providers.spi.PhoneVerificationCodeSpi
+org.tecklens.splkeycloak.providers.keycloak.phone.providers.spi.PhoneSpi
+org.tecklens.splkeycloak.providers.keycloak.phone.providers.spi.MessageSenderServiceSpi
