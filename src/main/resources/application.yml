@@ -14,7 +14,7 @@ spring:
         show_sql: true
         generate_statistics: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/keycloak
+    url: jdbc:postgresql://host.docker.internal:5432/keycloak
     username: postgres
     password: spl@2024
     driver-class-name: org.postgresql.Driver
